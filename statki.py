@@ -10,13 +10,13 @@ class BattleshipGame:
         self.screen = pygame.display.set_mode((gfx.WIDTH, gfx.HEIGHT))
         pygame.display.set_caption("Projekt Statki - Zespół NPG")
         self.clock = pygame.time.Clock()
-        
+
         # Inicjalizacja klas reszty zespołu
-        self.eco = Economy() 
+        self.eco = Economy()
         self.treasure = Treasure(gfx.GRID_SIZE)
-        
+
         # Zmienne do zarządzania grą
-        self.game_phase = 'SETUP' 
+        self.game_phase = 'SETUP'
         self.game_over = False
 
     def draw(self):
