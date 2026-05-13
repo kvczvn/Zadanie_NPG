@@ -28,7 +28,6 @@ Gra podzielona jest na cztery cykliczne fazy:
 ---
 
 ### 💵 System Ekonomiczny
-Zarządzanie budżetem jest kluczem do zwycięstwa.
 
 | Akcja / Przedmiot | Koszt / Zysk | Opis |
 | :--- | :--- | :--- |
@@ -48,7 +47,6 @@ Zarządzanie budżetem jest kluczem do zwycięstwa.
 ### 🛠️ Specjalne Jednostki i Mechaniki
 
 * **🏭 Rafineria:** Możesz ulepszyć statek do roli Rafinerii. Zwiększa ona pasywny dochód o **+50 CR**.
-* **🤖 Inteligentne AI:** Komputer nie strzela na oślep. Zapamiętuje swoje strzały i uczy się Twojej strategii.
 
 ---
 
