@@ -10,7 +10,11 @@ class BattleshipGame:
         self.screen = pygame.display.set_mode((gfx.WIDTH, gfx.HEIGHT))
         pygame.display.set_caption("Projekt Statki - Zespół NPG")
         self.clock = pygame.time.Clock()
-        
+
+        self.player_ships = []      # Lista na obiekty Ship gracza
+        self.computer_ships = []    # Lista na obiekty Ship komputera
+        self.player_misses = set()  # Zbiór współrzędnych pudeł gracza
+        self.computer_misses = set()# Zbiór współrzędnych pudeł komputera
         # Inicjalizacja klas reszty zespołu
         self.eco = Economy() 
         self.treasure = Treasure(gfx.GRID_SIZE)
