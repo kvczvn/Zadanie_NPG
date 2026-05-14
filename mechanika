@@ -1,0 +1,9 @@
+--PORUSZANIE--
+statek ma zdefiniowany przód, na koniec każdej tury przesuwa się o jedno pole do przodu, jeśli napotka koniec planszy, albo inny statek, zamiast poruszać sie odwraca sie o 90 stopni w prawo.
+
+--PLANSZA--
+rozmiar: 10x10
+
+--STATKI--
+(jak u Gosi w branchu)
+
