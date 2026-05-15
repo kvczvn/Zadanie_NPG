@@ -3,19 +3,19 @@
 Project: Zadanie_NPG (Battleships Game)
 Module: economy.py
 Author: Patryk Jacak
-Version: 1.1
+Version: 1.2
 Description: 
 Moduł odpowiedzialny za zarządzanie pieniędzmi gracza, obliczanie cen w sklepie
-biorąc pod uwagę inflacje oraz wszystkie transakcje np. nagroda za trafieni okrętu
+uwzględniając inflację, system nagród oraz pasywny dochód.
 ================================================================================
 """
 
 class Economy:
     def __init__(self, starting_credits=1000):
-        # Główny portfel
+        # Główny portfel gracza
         self.credits = starting_credits
         
-        # Słownik do śledzenia liczby zakupów (kluczowe dla inflacji)
+        # Słownik do śledzenia liczby zakupów (kluczowe dla inflacji #18)
         self.items_bought = {
             "ammo": 0,
             "repair": 0,
@@ -28,9 +28,9 @@ class Economy:
             "repair": 250
         }
         
-        # Flaga dla bonusu "Last Chance"
+        # Flaga dla bonusu "Last Chance" (#25)
         self.last_chance_active = False
-    
+
     def get_item_price(self, item_name):
         """
         Oblicza aktualną cenę przedmiotu uwzględniając inflację i bonusy.
@@ -50,3 +50,26 @@ class Economy:
             current_price *= 0.2
             
         return int(current_price)
+
+    def add_reward(self, hit_type):
+        """
+        Przyznaje nagrodę za akcje na polu bitwy.
+        hit_type: 'hit' (trafienie) lub 'sink' (zatopienie).
+        """
+        rewards = {
+            "hit": 50,
+            "sink": 150
+        }
+        
+        reward = rewards.get(hit_type, 0)
+        self.credits += reward
+        return reward
+
+    def apply_passive_income(self):
+        """
+        Dodaje pasywny dochód co turę (Issue #25).
+        Podstawowy dochód to 25 jednostek.
+        """
+        income = 25
+        self.credits += income
+        return income
