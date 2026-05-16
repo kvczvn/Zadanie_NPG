@@ -15,6 +15,7 @@ class BattleshipGame:
         self.computer_ships = []    # Lista na obiekty Ship komputera
         self.player_misses = set()  # Zbiór współrzędnych pudeł gracza
         self.computer_misses = set()# Zbiór współrzędnych pudeł komputera
+        
         # Inicjalizacja klas reszty zespołu
         self.eco = Economy() 
         self.treasure = Treasure(gfx.GRID_SIZE)
@@ -22,6 +23,23 @@ class BattleshipGame:
         # Zmienne do zarządzania grą
         self.game_phase = 'SETUP' 
         self.game_over = False
+
+    # === TUTAJ ZNAJDUJE SIĘ ROZWIĄZANIE TASKU #10 ===
+    def handle_mouse_click(self, pos):
+        """Zamienia kliknięcie myszką na współrzędne siatki (wiersz i kolumnę)."""
+        if self.game_over: return
+        x, y = pos
+
+        if self.game_phase == 'SETUP':
+            # Sprawdzamy, czy kliknięcie myszką mieści się w granicach planszy gracza
+            if gfx.P1_OFFSET_X <= x <= gfx.P1_OFFSET_X + gfx.GRID_SIZE * gfx.CELL_SIZE and \
+               gfx.P1_OFFSET_Y <= y <= gfx.P1_OFFSET_Y + gfx.GRID_SIZE * gfx.CELL_SIZE:
+                
+                # Przeliczanie pikseli na współrzędne siatki (dzielenie całkowite //)
+                c = (x - gfx.P1_OFFSET_X) // gfx.CELL_SIZE
+                r = (y - gfx.P1_OFFSET_Y) // gfx.CELL_SIZE
+                
+                print(f"współrzędne siatki -> Wiersz: {r}, Kolumna: {c}")
 
     def draw(self):
         """Funkcja rysująca wszystko na ekranie."""
@@ -41,8 +59,8 @@ class BattleshipGame:
                 if event.type == pygame.QUIT:
                     running = False
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                    # obsługa kliknięć
-                    print("Kliknięto myszką w pozycję:", event.pos)
+                    # === TUTAJ WYWOŁUJEMY TWOJĄ FUNKCJĘ PRZELICZAJĄCĄ ===
+                    self.handle_mouse_click(event.pos)
 
             self.draw()
             self.clock.tick(60)
