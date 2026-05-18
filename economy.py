@@ -3,7 +3,7 @@
 Project: Zadanie_NPG (Battleships Game)
 Module: economy.py
 Author: Patryk Jacak
-Version: 1.2
+Version: 1.3
 Description: 
 Moduł odpowiedzialny za zarządzanie pieniędzmi gracza, obliczanie cen w sklepie
 uwzględniając inflację, system nagród oraz pasywny dochód.
@@ -73,3 +73,31 @@ class Economy:
         income = 25
         self.credits += income
         return income
+
+    def buy_item(self, item_name):
+        """
+        Realizuje zakup przedmiotu przez gracza.
+        Sprawdza dostępność kredytów, pobiera opłatę i aktualizuje licznik zakupów dla inflacji.
+        """
+        # 1. Sprawdź, czy przedmiot w ogóle istnieje w cenniku
+        price = self.get_item_price(item_name)
+        if price is None:
+            print(f"[Sklep] Błąd: Przedmiot '{item_name}' nie istnieje w ofercie.")
+            return False
+            
+        # 2. Sprawdź, czy gracz ma wystarczająco dużo kredytów
+        if self.credits < price:
+            print(f"[Sklep] Brak funduszy na zakup {item_name}. Potrzebujesz: {price}, posiadasz: {self.credits}.")
+            return False
+            
+        # 3. Realizacja transakcji
+        self.credits -= price
+        
+        # Zwiększamy licznik zakupów (to automatycznie podbije cenę na przyszłość przez inflację!)
+        if item_name in self.items_bought:
+            self.items_bought[item_name] += 1
+        else:
+            self.items_bought[item_name] = 1
+            
+        print(f"[Sklep] Zakupiono udanie: {item_name} za {price} kredytów.")
+        return True
