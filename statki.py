@@ -23,6 +23,14 @@ class BattleshipGame:
         # Zmienne do zarządzania grą
         self.game_phase = 'SETUP' 
         self.game_over = False
+        self.winner_text = ""
+
+    def check_win_conditions(self):
+        """Sprawdza, czy któraś z flot została całkowicie zniszczona."""
+        # Wygrywasz, jeśli komputer ma statki i WSZYSTKIE (all) zatonęły
+        if len(self.computer_ships) > 0 and all(ship.is_sunk() for ship in self.computer_ships):
+            self.game_over = True
+            self.winner_text = "Wygrałeś! Zniszczyłeś flotę komputera!"
 
     # === TUTAJ ZNAJDUJE SIĘ ROZWIĄZANIE TASKU #10 ===
     def handle_mouse_click(self, pos):
