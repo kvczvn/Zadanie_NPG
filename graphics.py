@@ -41,4 +41,33 @@ font = pygame.font.SysFont("arial", 18, bold=True)
 small_font = pygame.font.SysFont("arial", 14)
 title_font = pygame.font.SysFont("arial", 26, bold=True)
 
+#funkcja rysuje siatke 15X15 (#9)
+def draw_fleet_and_misses(screen, ships, misses, offset_x, offset_y, game_over, hide_ships=False, is_player_board=False, treasure_pos=None):
+
+    for r in range(GRID_SIZE):
+
+        for c in range(GRID_SIZE):
+
+            x = offset_x + c * CELL_SIZE
+
+            y = offset_y + r * CELL_SIZE
+
+            rect = pygame.Rect(x, y, CELL_SIZE, CELL_SIZE)
+
+           
+
+            if (r, c) in misses:
+
+                pygame.draw.rect(screen, DARK_GRAY, rect)
+
+                text_surface = small_font.render("O", True, WHITE)
+
+                screen.blit(text_surface, (x + 8, y + 4))
+
+            else:
+
+                pygame.draw.rect(screen, WHITE, rect)
+
+            pygame.draw.rect(screen, BLACK, rect, 1)
+
 
