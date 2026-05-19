@@ -33,3 +33,17 @@ class Ship:
                     rot_col = True
                     break
 
+class Treasure:
+    def __init__(self, grid_size):
+        self.grid_size = grid_size
+        self.pos = None
+
+    def spawn(self, player_ships):
+        while True:
+            r = random.randint(0, self.grid_size - 1)
+            c = random.randint(0, self.grid_size - 1)
+            if all((r, c) not in ship.cells for ship in player_ships):
+                self.pos = (r, c)
+                break
+
+    
