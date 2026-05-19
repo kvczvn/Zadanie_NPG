@@ -55,6 +55,13 @@ class BattleshipGame:
         
         # W przyszłości tu będą wywoływane funkcje rysujące
         gfx.draw_board_skeleton(self.screen)
+
+        if self.game_over:
+            # Jeśli w tekście jest słowo "Wygrałeś", użyj zielonego koloru z pliku grafiki. W przeciwnym razie czerwonego.
+            color = gfx.GREEN if "Wygrałeś" in self.winner_text else gfx.RED
+            msg = gfx.title_font.render(self.winner_text, True, color)
+            # Rysujemy tekst na środku ekranu
+            self.screen.blit(msg, (gfx.WIDTH//2 - msg.get_width()//2, gfx.HEIGHT//2))
         
         pygame.display.flip()
 
@@ -69,6 +76,8 @@ class BattleshipGame:
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                     # === TUTAJ WYWOŁUJEMY TWOJĄ FUNKCJĘ PRZELICZAJĄCĄ ===
                     self.handle_mouse_click(event.pos)
+            if not self.game_over:
+                self.check_win_conditions()
 
             self.draw()
             self.clock.tick(60)
