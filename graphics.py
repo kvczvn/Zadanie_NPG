@@ -55,7 +55,7 @@ def draw_fleet_and_misses(screen, ships, misses, offset_x, offset_y, game_over, 
             rect = pygame.Rect(x, y, CELL_SIZE, CELL_SIZE)
 
            
-
+#funkcja Wizualizacja pudeł (znak "O") (#32)
             if (r, c) in misses:
 
                 pygame.draw.rect(screen, DARK_GRAY, rect)
