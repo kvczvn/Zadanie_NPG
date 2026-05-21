@@ -49,3 +49,40 @@ class GameLogic:
                     )
 
                     placed = True
+                    
+    def process_fleet_movement(fleet, grid_size):
+
+        for ship in fleet:
+
+            if ship.is_sunk():
+                continue
+
+            dr, dc = ship.direction
+
+            new_cells = [
+                (r + dr, c + dc)
+                for r, c in ship.cells
+            ]
+
+            out_of_bounds = any(
+                r < 0 or r >= grid_size or
+                c < 0 or c >= grid_size
+                for r, c in new_cells
+            )
+
+            collision = False
+
+            if not out_of_bounds:
+
+                for other_ship in fleet:
+
+                    if other_ship != ship and any(
+                        cell in other_ship.cells
+                        for cell in new_cells
+                    ):
+
+                        collision = True
+                        break
+
+            if not out_of_bounds and not collision:
+                ship.cells = new_cells
