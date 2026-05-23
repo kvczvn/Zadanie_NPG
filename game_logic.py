@@ -84,5 +84,45 @@ class GameLogic:
                         collision = True
                         break
 
-            if not out_of_bounds and not collision:
+            if out_of_bounds or collision:
+
+                ship.direction = (dc, -dr)
+
+                pivot_r, pivot_c = ship.cells[-1]
+
+                rotated_cells = []
+
+                for r, c in ship.cells:
+
+                    rotated_cells.append(
+                        (
+                            pivot_r + (c - pivot_c),
+                            pivot_c - (r - pivot_r)
+                        )
+                    )
+
+                rot_oob = any(
+                    r < 0 or r >= grid_size or
+                    c < 0 or c >= grid_size
+                    for r, c in rotated_cells
+                )
+
+                rot_col = False
+
+                if not rot_oob:
+
+                    for other_ship in fleet:
+
+                        if other_ship != ship and any(
+                            cell in other_ship.cells
+                            for cell in rotated_cells
+                        ):
+
+                            rot_col = True
+                            break
+
+                if not rot_oob and not rot_col:
+                    ship.cells = rotated_cells
+
+            else:
                 ship.cells = new_cells
