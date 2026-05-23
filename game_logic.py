@@ -126,3 +126,48 @@ class GameLogic:
 
             else:
                 ship.cells = new_cells
+                
+    @staticmethod
+    def computer_shoot(player_ships, player_misses, grid_size):
+
+        while True:
+
+            r = random.randint(0, grid_size - 1)
+            c = random.randint(0, grid_size - 1)
+
+            if (r, c) in player_misses:
+                continue
+
+            hit_already = False
+
+            for ship in player_ships:
+
+                if (r, c) in ship.cells:
+
+                    idx = ship.cells.index((r, c))
+
+                    if not ship.health[idx]:
+                        hit_already = True
+
+            if hit_already:
+                continue
+
+            break
+
+        pygame.time.delay(300)
+
+        hit_something = False
+
+        for ship in player_ships:
+
+            if (r, c) in ship.cells:
+
+                idx = ship.cells.index((r, c))
+
+                ship.health[idx] = False
+
+                hit_something = True
+                break
+
+        if not hit_something:
+            player_misses.add((r, c))
