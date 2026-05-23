@@ -49,7 +49,8 @@ class GameLogic:
                     )
 
                     placed = True
-                    
+
+    @staticmethod            
     def process_fleet_movement(fleet, grid_size):
 
         for ship in fleet:
