@@ -4,7 +4,7 @@
 
 | Dzień | Godzina | Miejsce/Platforma | Uczestnicy |
 | :--- | :--- | :--- | :--- |
-| 29.04.2026 | 16:00 - 18:30 | Discord / GitHub Projects | Rafał, Małgorzata, Franek, Patryk, Michał |
+| 29.04.2026 | 16:00 - 18:30 | Discord | Rafał, Małgorzata, Franek, Patryk, Michał |
 
 ---
 
@@ -45,4 +45,4 @@ Szczegółowy przebieg realizacji zadań w ramach **SPRINT 1: Fundamenty i Archi
 
 Ważne spostrzeżenia, które musimy wziąć pod uwagę przy następnym sprincie:
 - **Kamień milowy**: Pomyślne uruchomienie pustego okna renderowania biblioteki Pygame połączone ze zdefiniowaniem struktury plików projektu.
-- **Wnioski**: Komunikacja asynchroniczna przy definicji Backlogu przebiegła pomyślnie. Należy zwrócić szczególną uwagę na zgodność wersji interpretera Python (wymagany 3.10+) u wszystkich członków zespołu.
+- **Wnioski**: Należy zwrócić szczególną uwagę na zgodność wersji interpretera Python (wymagany 3.10+) u wszystkich członków zespołu.
