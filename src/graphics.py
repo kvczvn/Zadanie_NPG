@@ -1,13 +1,12 @@
 
-================================================================================
+"""================================================================================
 Project: Zadanie_NPG (Battleships Game)
 Module: graphics.py
 Author: Michał Kapel
 Version: 1.1
 Description: Moduł odpowiedzialny za definicje stałych, kolory i funkcje rysujące całą planszę, 
 statki oraz interfejs.
-================================================================================
-
+================================================================================"""
 
 
 import pygame

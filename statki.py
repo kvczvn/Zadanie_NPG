@@ -1,9 +1,9 @@
 import pygame
 import sys
-import graphics as gfx
-from objects import Ship, Treasure
-from economy import Economy
-from logic import GameLogic
+import src.graphics as gfx
+from src.objects import Ship, Treasure
+from src.economy import Economy
+from src.game_logic import GameLogic
 
 class BattleshipGame:
     def __init__(self):

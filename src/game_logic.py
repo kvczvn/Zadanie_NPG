@@ -1,6 +1,6 @@
 import random
 import pygame
-from objects import Ship
+from src.objects import Ship
 
 class GameLogic:
 
