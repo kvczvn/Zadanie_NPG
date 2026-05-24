@@ -1,2 +1,2 @@
 Tutaj każdy członek zespołu wrzuca swoje notatki.
-Format nazwy pliku: DD-MM-RRRR-Imie.md
+Format nazwy pliku: DD-MM-RRRR-Imi
