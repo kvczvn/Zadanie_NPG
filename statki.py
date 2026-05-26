@@ -3,7 +3,7 @@ import sys
 import graphics as gfx
 from objects import Ship, Treasure
 from economy import Economy
-from logic import GameLogic
+from game_logic import GameLogic
 
 class BattleshipGame:
     def __init__(self):
