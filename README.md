@@ -18,22 +18,22 @@ W tej wersji gry zasady zostały rozszerzone o ekonomię, sklep, amunicję, ruch
 
       
 ## 📝 Cel Gry
-Celem gry jest zniszczenie całej floty komputera. Gracz robi to przez strzelanie w pola na planszy przeciwnika. Komputer również strzela w planszę gracza. Wygrywa ta strona, która jako pierwsza zatopi wszystkie statki przeciwnika.
-Gra kończy się, gdy:
-•	gracz zatopi wszystkie statki komputera — gracz wygrywa,
-•	komputer zatopi wszystkie statki gracza — gracz przegrywa.
+Celem gry jest zniszczenie całej floty komputera. Gracz robi to przez strzelanie w pola na planszy przeciwnika. Komputer również strzela w planszę gracza. Wygrywa ta strona, która jako pierwsza zatopi wszystkie statki przeciwnika.  
+Gra kończy się, gdy:  
+•	gracz zatopi wszystkie statki komputera — gracz wygrywa,  
+•	komputer zatopi wszystkie statki gracza — gracz przegrywa.  
 
 ## Plansza gry
-Gra toczy się na dwóch planszach o rozmiarze 15 × 15 pól:
-•	lewa plansza to plansza gracza,
-•	prawa plansza to plansza komputera.
-Na planszy gracza widoczne są własne statki. Na planszy komputera statki są ukryte, dopóki nie zostaną trafione lub zatopione.
+Gra toczy się na dwóch planszach o rozmiarze 15 × 15 pól:  
+•	lewa plansza to plansza gracza,  
+•	prawa plansza to plansza komputera.  
+Na planszy gracza widoczne są własne statki. Na planszy komputera statki są ukryte, dopóki nie zostaną trafione lub zatopione.  
 
 ## Flota
 W grze występują statki o różnych rozmiarach. Rozmiar statku oznacza liczbę pól, które zajmuje na planszy.
-Flota składa się ze statków o długościach:
-4, 3, 3, 2, 2, 1, 1
-Każde pole statku można traktować jako jeden maszt lub jeden punkt życia. Jeżeli gracz albo komputer trafi w dane pole statku, ta część zostaje uszkodzona. Statek zostaje zatopiony dopiero wtedy, gdy wszystkie jego pola zostaną trafione.
+Flota składa się ze statków o długościach:  
+4, 3, 3, 2, 2, 1, 1  
+Każde pole statku można traktować jako jeden maszt lub jeden punkt życia. Jeżeli gracz albo komputer trafi w dane pole statku, ta część zostaje uszkodzona. Statek zostaje zatopiony dopiero wtedy, gdy wszystkie jego pola zostaną trafione.  
 
 ## Oznaczenia na planszy
 W grze używane są następujące oznaczenia:  
@@ -101,6 +101,7 @@ Na początku gry gracz posiada:
 - 100 CR  
 - 30 jednostek amunicji  
 - 0 bombardowań  
+  
 Kredyty można zdobywać przez:  
 Źródło - Zysk  
 Trafienie statku przeciwnika - +50 CR  
