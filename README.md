@@ -3,7 +3,7 @@
 # ⚓ Projekt Statki
 Projekt jest rozszerzoną wersją klasycznej gry w statki, przygotowaną w języku Python z wykorzystaniem biblioteki Pygame. Gra łączy tradycyjne zasady polegające na zatapianiu floty przeciwnika z dodatkowymi mechanikami, takimi jak ekonomia, amunicja, sklep, ruch statków, bombardowanie, rafineria oraz złoty skarb.
 Gracz rywalizuje z komputerem. Każda strona posiada własną flotę statków rozmieszczoną na planszy. Celem gry jest zatopienie wszystkich statków przeciwnika, zanim komputer zatopi flotę gracza
----
+
 
 ## 📝 Podstawowe zasady Gry
 1.	Każdy gracz posiada własną planszę o rozmiarze **15x15**.
@@ -36,14 +36,13 @@ Flota składa się ze statków o długościach:
 Każde pole statku można traktować jako jeden maszt lub jeden punkt życia. Jeżeli gracz albo komputer trafi w dane pole statku, ta część zostaje uszkodzona. Statek zostaje zatopiony dopiero wtedy, gdy wszystkie jego pola zostaną trafione.
 
 ## Oznaczenia na planszy
-W grze używane są następujące oznaczenia:
-Oznaczenie	Znaczenie
-Niebieskie pole	Sprawny statek gracza
-Czerwone pole z X	Trafiona część statku
-Szare pole z O	Pudło
-Żółte kółko na statku	Dziób statku
-Zielony statek	Statek pełniący funkcję rafinerii
-Złote kółko	Złoty skarb
+W grze używane są następujące oznaczenia:  
+Niebieskie pole	- Sprawny statek gracza  
+Czerwone pole z X - Trafiona część statku  
+Szare pole z O - Pudło  
+Żółte kółko na statku - Dziób statku  
+Zielony statek - Statek pełniący funkcję rafinerii  
+Złote kółko - Złoty skarb  
 
 
 ### 1. Fazy Rozgrywki
