@@ -16,7 +16,9 @@ Gracz rywalizuje z komputerem. Każda strona posiada własną flotę statków ro
 8.	Wygrywa osoba, która jako pierwsza zatopi całą flotę przeciwnika.
 W tej wersji gry zasady zostały rozszerzone o ekonomię, sklep, amunicję, ruch statków oraz dodatkowe akcje specjalne.
 
-      
+    
+
+  
 ## 📝 Cel Gry
 Celem gry jest zniszczenie całej floty komputera. Gracz robi to przez strzelanie w pola na planszy przeciwnika. Komputer również strzela w planszę gracza. Wygrywa ta strona, która jako pierwsza zatopi wszystkie statki przeciwnika.  
 Gra kończy się, gdy:  
